@@ -5,9 +5,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main-Page</title>
+    <style>
+        .container{
+            display: flex;
+            gap:15px;
+            margin-left: 15px;
+        }
+        .title{
+            text-align: center;
+        }
+
+    </style>
 </head>
 <body>
-    <h1>MAIN</h1>
-    
+    <h1 class="title">CHOOSE THE MOVIE</h1>
+    <div id="cont" class="container">
+
+    </div> 
+    <script>
+        const container = document.getElementById("cont")
+        const movies =[
+            {
+                name:"The Batman",
+                link:"https://m.media-amazon.com/images/M/MV5BYTExZTdhY2ItNGQ1YS00NjJlLWIxMjYtZTI1MzNlMzY0OTk4XkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_FMjpg_UX1000_.jpg",
+                date: new Date("Mar 04, 2022 7:00:00")
+            },
+            {
+                name:"Top Gun: Maveric",
+                link:"https://i.pinimg.com/originals/42/d9/a1/42d9a1031df20d1328a987a5dc28140a.jpg",
+                date: new Date("27 05, 2022 7:00:00")
+            },
+            {
+                name:"After The Pandemic",
+                link:"https://m.media-amazon.com/images/M/MV5BOGYyM2ZjNjItNGQzMC00ZWEzLTk0MGItM2YxMzZkYzY3Y2U1XkEyXkFqcGdeQXVyNzc2NTAxMDY@._V1_.jpg",
+                date: new Date("Mar 01, 2022 7:00:00")
+            },
+            {
+                name:"Jurassic World: Dominion",
+                link: "https://m.media-amazon.com/images/M/MV5BMjQzZTA2MmEtNDcwYy00ZWE0LWFlODMtOWQ2MzRjNTgyYmVkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
+                date: new Date("Jun 22, 2022 7:00:00")
+
+            },
+            {
+                name: "The Rings of Power",
+                link: "https://m.media-amazon.com/images/M/MV5BOTUzYTMwYjAtNzMzMS00YjhmLWEwOGQtY2MxZGEyMzMwZDI0XkEyXkFqcGdeQXVyMjkwOTAyMDU@._V1_FMjpg_UX1000_.jpg",
+                date: new Date("Sep 02, 2022 12")
+            }
+        ]
+
+        movies.forEach((movie)=>generateMovie(movie));
+        
+        function generateMovie(movie){
+            const poster = document.createElement("a");
+            const image = document.createElement("img");
+            image.setAttribute("src", movie.link)
+            image.setAttribute("alt", "Movie Poster")
+            image.setAttribute("width", 285);
+            image.setAttribute("height", 421);
+            poster.appendChild(image);
+            container.appendChild(poster);
+        }
+
+
+    </script>
 </body>
 </html>

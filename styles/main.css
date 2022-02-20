@@ -1,0 +1,8 @@
+.container{
+    display: flex;
+    gap:15px;
+    margin-left: 15px;
+}
+.title{
+    text-align: center;
+}
